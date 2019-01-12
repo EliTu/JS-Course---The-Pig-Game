@@ -1,6 +1,8 @@
 # The-Pig-Game---JS-Course-Project (Version 1.0)
 Jonas Schmedtmann JavaScript Course's Pig Game project ** All rights reserved to Jonas Schmedtmann for the game components **
 
+**Now hosted on Github Pages: https://elitu.github.io/The-Pig-Game---JS-Course-Project/**
+
 ## 1.1 Intro:
 
 ** This application is part of Jonas Schmedtmann's Udemy course "The Complete JavaScript Course 2018: Build Real Projects!". This is the first "real" coding project on this course and it's purpose is to implement all that we've learned so far in the course regarding functional JavaScript. 
