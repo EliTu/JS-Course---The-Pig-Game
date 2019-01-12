@@ -1,7 +1,10 @@
 # The-Pig-Game---JS-Course-Project
 Jonas Schmedtmann JavaScript Course's Pig Game project ** All rights reserved to Jonas Schmedtmann for the game components **
 
-1.2 Game Guide:
+## 1.1 Game Rules: 
+
+
+## 1.2 Game Guide:
 
 Game setup menu:
 
@@ -17,7 +20,7 @@ Main game interface:
 
 ** The main game interface is the main screen where the game is being initialized and played. 
   
-   - Player 1 & 2 interface - Player 1 & 2 have the same type of interface, player 1 is located on the left, player 2 located on the right. Both have "total score" and "current round score" counters, the top large number and the bottom number in the box respectivly, which change as the game progresses. 
+   - Player 1 & 2 interface - Player 1 & 2 have the same type of interface, player 1 is located on the left, player 2 located on the right. Both have "total score" and "current round score" counters, the top large number and the bottom number in the box respectively, which change as the game progresses. 
    
    - Active player marker - The active player marker is the red dot next to the player name, and also the deeper grey color in the player's box.
    
@@ -38,6 +41,6 @@ The buttons:
     
   - Hold button - Upon a press Adds the total current score to the total score and pass the turn to the other player. If there is 0 in  the current score box, it will simply pass the turn to the other player. Available after game initialization and as long as no player won the game.
     
-  - New game button - Upon a press will initialize a new game (but saves the player names that were set during the game setup), as a    result the total scores and the current scores will be lost. Available after game initalization and also after a player won. Upon a player win, the button centers inteslf in the middle of the UI and needed to be pressed to renew a game. 
+  - New game button - Upon a press will initialize a new game (but saves the player names that were set during the game setup), as a    result the total scores and the current scores will be lost. Available after game initialization and also after a player won. Upon a player win, the button centers itself in the middle of the UI and needed to be pressed to renew a game. 
     
-  - Setting menu button - Upon a press the game setup menu will apear and the game can be reconfigured. Upon pressing the 'Complete' button a new game will start with the new configurations.
+  - Setting menu button - Upon a press the game setup menu will appear and the game can be reconfigured. Upon pressing the 'Complete' button a new game will start with the new configurations.
