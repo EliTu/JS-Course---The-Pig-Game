@@ -1,10 +1,23 @@
-# The-Pig-Game---JS-Course-Project
+# The-Pig-Game---JS-Course-Project (Version 1.0)
 Jonas Schmedtmann JavaScript Course's Pig Game project ** All rights reserved to Jonas Schmedtmann for the game components **
 
-## 1.1 Game Rules: 
+## 1.1 Intro:
 
+** This application is part of Jonas Schmedtmann's Udemy course "The Complete JavaScript Course 2018: Build Real Projects!". This is the first "real" coding project on this course and it's purpose is to implement all that we've learned so far in the course regarding functional JavaScript. 
 
-## 1.2 Game Guide:
+** Most of the outer layer of this app and it's design have been designed provided by Jonas (as part of the course materials) and so the credit is due to Jonas Schmedtmann. I indeed have added more HTML and CSS content as I was working on this project, like re-positioning buttons, adding the game setup menu, goal score counter etc. 
+
+** Most of the JavaScript code has been written by me, some of it through the guidance of Jonas during the course. I believe there are still a lot of improvements needed to be made and that the code is not perfect, but I am relatively happy that the app functions as I intended so far. 
+
+** More improvements and additions will be added in the future. In the next versions I would like to add animated transitions and perhaps shrink the JavaScript code with some more specific functions and variables.
+
+** Big thank you for Jonas for being an awesome teacher! You rock man!
+
+## 1.2 Game Rules: 
+
+** 
+
+## 1.3 Game Guide:
 
 Game setup menu:
 
