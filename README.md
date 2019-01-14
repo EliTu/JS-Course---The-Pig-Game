@@ -1,11 +1,14 @@
 # The-Pig-Game---JS-Course-Project (Version 1.0)
+
 Jonas Schmedtmann JavaScript Course's Pig Game project ** All rights reserved to Jonas Schmedtmann for the game components **
 
 **Now hosted on Github Pages: https://elitu.github.io/The-Pig-Game---JS-Course-Project/**
 
 ## 1.1 Intro:
 
-** This application is part of Jonas Schmedtmann's Udemy course "The Complete JavaScript Course 2018: Build Real Projects!". This is the first "real" coding project on this course and it's purpose is to implement all that we've learned so far in the course regarding functional JavaScript. 
+** This application is part of Jonas Schmedtmann's Udemy course "The Complete JavaScript Course 2018: Build Real Projects!". This is a competitive dice roll luck game for two players to play. This game was built using HTML, CSS and Vanilla JavaScript code.
+
+** This is the first "real" coding project on this course and it's purpose is to implement all that we've learned so far in the course regarding functional JavaScript. 
 
 ** Most of the outer layer of this app and it's design have been designed provided by Jonas (as part of the course materials) and so the credit is due to Jonas Schmedtmann. I indeed have added more HTML and CSS content as I was working on this project, like re-positioning buttons, adding the game setup menu, goal score counter etc. 
 
@@ -17,7 +20,15 @@ Jonas Schmedtmann JavaScript Course's Pig Game project ** All rights reserved to
 
 ## 1.2 Game Rules: 
 
-** 
+** The goal of the game is to reach the score goal set prior at the game setup menu. First player to reach the specified amount or higher within his turn wins.
+
+** The game starts with a turn of either player one or player two. On each player's turn, a player can press on the 'Roll' button in order to roll the dice. On each dice roll, unless both dice land on 1 or 6, the sum of the dice roll will be registered in the current score counter box. 
+
+** On each turn, the player can roll the dice as much as he wants, until he encounters double 1 or double 6, or he press on 'Hold' in order to keep the current score points into the total points counter.
+
+** Upon both dice rolling a 1 - The player loses his entire total score, as well as the current score, and the turn pass to the next player.
+
+** Upon both dice rolling a 6 - The player loses 40 points of his total score, as well as the entire current score, and the turn pass to the next player. 
 
 ## 1.3 Game Guide:
 
@@ -59,3 +70,17 @@ The buttons:
   - New game button - Upon a press will initialize a new game (but saves the player names that were set during the game setup), as a    result the total scores and the current scores will be lost. Available after game initialization and also after a player won. Upon a player win, the button centers itself in the middle of the UI and needed to be pressed to renew a game. 
     
   - Setting menu button - Upon a press the game setup menu will appear and the game can be reconfigured. Upon pressing the 'Complete' button a new game will start with the new configurations.
+
+## Future plans for this project:
+
+ - Concise and more clear JavaScript code.
+
+ - Add transition animations for the game setup menu pop-up and button appear/disappear. 
+
+ - Make the site responsive.
+
+ - Create strict and light game modes, each changes the value of the penalties. Toggled from the game setup menu.
+
+ - Add more complex game rules (?).
+
+ - Add more player options (?).
