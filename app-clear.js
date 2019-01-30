@@ -8,30 +8,34 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
-
-var totalScore, roundScore, activePlayer, gameOn, goalPoints, configured;
+let totalScore; 
+let roundScore; 
+let activePlayer; 
+let gameOn; 
+let goalPoints; 
+let configured;
 
 init();
 gameSetup();
 
  // Event for 'ROLL' button:
-document.querySelector('.btn-roll').addEventListener('click', function(){
+document.querySelector('.btn-roll').addEventListener('click', () => {
     if(configured) { // Game setup menu is up, game being configured
          if(gameOn) {  // Game is active
         // Generating a random number when rolling the dice:
         let dice = [0, 0]; // Dice #1 and dice #2
-
         dice[0] = Math.floor(Math.random() * (7 - 1)) + 1;
-        // Displaying the result:
-        let diceDOM1 = document.querySelector('.dice-1'); 
-        diceDOM1.style.display = "block"; 
-        diceDOM1.src = 'dice-' + dice[0] + '.png'; 
-
         dice[1] = Math.floor(Math.random() * (7 - 1)) + 1;
+        
+        let diceDomOne = document.querySelector('.dice-1');
+        let diceDomTwo = document.querySelector('.dice-2'); 
         // Displaying the result:
-        let diceDOM2 = document.querySelector('.dice-2'); 
-        diceDOM2.style.display = "block"; 
-        diceDOM2.src = 'dice-' + dice[1] + '.png'; 
+         
+        diceDomOne.style.display = "block"; 
+        diceDomOne.src = `dice-${dice[0]}.png`;
+        
+        diceDomTwo.style.display = "block"; 
+        diceDomTwo.src = `dice-${dice[1]}.png`;
 
         // Update the round score if the rolled number !== 1 || !== 6:
         if (dice[0] !== 1 && dice[0] !==6 || dice[1] !== 1 && dice[1] !==6) { // Upon rolling any number between 2 to 5.
@@ -132,7 +136,6 @@ function init() {
 function randomPlayer() { // Random player start the turn
 
     activePlayer = Math.floor(Math.random() * (2 - 0)); // Choose random between 0 and 1.
-    console.log(activePlayer); // Player turn track, for testing
 
     if (activePlayer === 0) { // Changing the active class
         document.querySelector('.player-0-panel').classList.add('active');
@@ -146,7 +149,6 @@ function randomPlayer() { // Random player start the turn
  // Input Menu functions:
 function openMenu() { // Activate the game options menu;
     document.querySelector('.input-menu').style.display = "block";
-    document.getElementById('dark-wrap').classList.add('transitions');
     gameSetup();
 }
 function submitInput() { // Upon clicking "complete"
@@ -175,9 +177,8 @@ function submitInput() { // Upon clicking "complete"
     document.querySelector('.main').classList.remove('main');
     }
 }
-function sliderDisplay(val) { // Displaying the value of the slider form
-   document.getElementById('slider-value').textContent = val;
-}
+let sliderDisplay = (val) => document.getElementById('slider-value').textContent = val;// Displaying the value of the slider form
+
 
 function gameSetup() { // While the game setup menu is up:
     configured = false;

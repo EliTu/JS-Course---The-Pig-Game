@@ -54,14 +54,14 @@ Main game interface:
    
    - Dice - A set of two dices that roll a random result between 1 and 6 upon pressing the 'roll' button. Displayed as long as the game          active, and the player didn't roll and double 1 or a double 6.
    
-   - Double 1 or double 6 roll message - Upon dice rolling that amounts to double 1 or double 6, a message alert will replace the dice and display the penalty message. Will dissapear upon pressing again on the roll button.
+   - Double 1 or double 6 roll message - Upon dice rolling that amounts to double 1 or double 6, a message alert will replace the dice and display the penalty message. Will disappear upon pressing again on the roll button.
    
    - Footer - At the bottom there is a small sleeve that upon hover will open the the footer that present the credits for this project.
    - Buttons - Roll, hold, new game and setting menu buttons. 
    
 The buttons:
 
-** The buttons have a specific functionality that allows the players to play the game, initiazlie a new game or re-adjust the settings of the game.
+** The buttons have a specific functionality that allows the players to play the game, initialize a new game or re-adjust the settings of the game.
   
   - Roll button - Upon a press the dice will roll. Available after game initialization and as long as no player wont the game.
     
