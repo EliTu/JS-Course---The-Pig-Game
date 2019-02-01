@@ -39,9 +39,9 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
     if(configured) { // Game setup menu is up, game being configured
          if(gameOn) {  // Game is active
 
-            // Generating a random number when rolling the dice:
-            dice[0] = Math.floor(Math.random() * (7 - 1)) + 1;
-            dice[1] = Math.floor(Math.random() * (7 - 1)) + 1;
+         // Generating a random number when rolling the dice:
+         dice[0] = Math.floor(Math.random() * (7 - 1)) + 1;
+         dice[1] = Math.floor(Math.random() * (7 - 1)) + 1;
 
             diceDisplay(); // Displaying the dices in the DOM
 
