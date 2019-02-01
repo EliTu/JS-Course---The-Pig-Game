@@ -7,35 +7,43 @@ GAME RULES:
 - The player can choose to 'Hold', which means that his ROUND score gets added to his GLOBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
 
+CUSTOM:
+
+- A player loses 40 points (of totalScore) when he rolls double 6, losses all points when he rolls double 1.
+- Add an input field to the HTML where players can set the winning score, can also choose the names of player 1 an player 2.
+- Add another dice to the game, player loses current score when even one of the dices rolls a 1.
+** Customize CSS rules for buttons display upon win/ game initialization.
+
 */
+
+    // Global game Variables:
+// Score variables:
 let totalScore; 
 let roundScore; 
-let activePlayer; 
-let gameOn; 
-let goalPoints; 
-let configured;
+let goalPoints; // Goal score
 
-init();
-gameSetup();
+// Components variables:
+let activePlayer = 0; // Changes between 0 (player 1) and 1 (player 2)
+let dice = [0, 0]; // Dice #1 and dice #2
+
+// State variables:
+let gameOn; // Is the game currently playing
+let configured; // Configurations completed or not
+    
+    // Game initializing functions: 
+gameSetup(); // Configuration menu
+init(); 
 
  // Event for 'ROLL' button:
 document.querySelector('.btn-roll').addEventListener('click', () => {
     if(configured) { // Game setup menu is up, game being configured
          if(gameOn) {  // Game is active
-        // Generating a random number when rolling the dice:
-        let dice = [0, 0]; // Dice #1 and dice #2
-        dice[0] = Math.floor(Math.random() * (7 - 1)) + 1;
-        dice[1] = Math.floor(Math.random() * (7 - 1)) + 1;
-        
-        let diceDomOne = document.querySelector('.dice-1');
-        let diceDomTwo = document.querySelector('.dice-2'); 
-        // Displaying the result:
-         
-        diceDomOne.style.display = "block"; 
-        diceDomOne.src = `dice-${dice[0]}.png`;
-        
-        diceDomTwo.style.display = "block"; 
-        diceDomTwo.src = `dice-${dice[1]}.png`;
+
+            // Generating a random number when rolling the dice:
+            dice[0] = Math.floor(Math.random() * (7 - 1)) + 1;
+            dice[1] = Math.floor(Math.random() * (7 - 1)) + 1;
+
+            diceDisplay(); // Displaying the dices in the DOM
 
         // Update the round score if the rolled number !== 1 || !== 6:
         if (dice[0] !== 1 && dice[0] !==6 || dice[1] !== 1 && dice[1] !==6) { // Upon rolling any number between 2 to 5.
@@ -58,32 +66,31 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
             document.getElementById('roll-6-msg').style.display = "none";
         }
     }   
-  }
-   
+  }  
 });
 
     // Event for 'HOLD' button:
-document.querySelector('.btn-hold').addEventListener('click', function() {
+document.querySelector('.btn-hold').addEventListener('click',() => {
     if(configured) { // Game setup menu is up, game being configured
         if(gameOn) { // Game is active
-        totalScore[activePlayer] += roundScore; 
+            totalScore[activePlayer] += roundScore; 
 
-        document.getElementById("score-" + activePlayer).textContent = totalScore[activePlayer];
-        
-        // Check if a player won the game + Next player:
-        if (totalScore[activePlayer] >= goalPoints) {
-            document.getElementById('name-' + activePlayer + '-new').textContent = 'Winner!';
-            document.querySelector('.dice-1').style.display = 'none';
-            document.querySelector('.dice-2').style.display = 'none';
-            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
-            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
-            document.querySelector('.btn-roll').style.display = "none"; // Hiding the other buttons upon  player victory
-            document.querySelector('.btn-hold').style.display = "none";
-            document.querySelector('.btn-new').classList.add('new-position'); // Place the "new game" button in the middle of the container
-            gameOn = false;
-            } else {
-                nextPlayer();
-            } 
+            document.getElementById("score-" + activePlayer).textContent = totalScore[activePlayer];
+            
+            // Check if a player won the game + Next player:
+            if (totalScore[activePlayer] >= goalPoints) {
+                document.getElementById('name-' + activePlayer + '-new').textContent = 'Winner!';
+                document.querySelector('.dice-1').style.display = 'none';
+                document.querySelector('.dice-2').style.display = 'none';
+                document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+                document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+                document.querySelector('.btn-roll').style.display = "none"; // Hiding the other buttons upon  player victory
+                document.querySelector('.btn-hold').style.display = "none";
+                document.querySelector('.btn-new').classList.add('new-position'); // Place the "new game" button in the middle of the container
+                gameOn = false;
+                } else {
+                    nextPlayer();
+                } 
     }
   }
 }); 
@@ -151,6 +158,7 @@ function openMenu() { // Activate the game options menu;
     document.querySelector('.input-menu').style.display = "block";
     gameSetup();
 }
+
 function submitInput() { // Upon clicking "complete"
     document.getElementById('name-0-new').textContent = document.getElementById('input-1').value;
     document.getElementById('name-1-new').textContent = document.getElementById('input-2').value;
@@ -194,8 +202,15 @@ function gameSetup() { // While the game setup menu is up:
     document.getElementById('dark-wrap').classList.add('main');
 }
 
-    // Coding Challenge 6: customized edition
-// 1. A player loses 40 points (of totalScore) when he rolls double 6, losses all points when he rolls double 1.
-// 2. Add an input field to the HTML where players can set the winning score, can also choose the names of player 1 an player 2.
-// 3. Add another dice to the game, player loses current score when even one of the dices rolls a 1.
-// ** Customize CSS rules for buttons display upon win/ game initialization.
+    // Display functions:
+
+function diceDisplay() {
+    let diceDomOne = document.querySelector('.dice-1');
+    let diceDomTwo = document.querySelector('.dice-2'); 
+    
+    if(gameOn) { diceDomOne.style.display = "block"; 
+    diceDomTwo.style.display = "block";}
+
+    diceDomOne.src = `dice-${dice[0]}.png`;
+    diceDomTwo.src = `dice-${dice[1]}.png`;
+}
